@@ -10,7 +10,7 @@ jobs:
         name: Setup .Net 6
         with:
           dotnet-version: 6.0
-      - run: dotnet new -lang C# -n TestProject
+      - run: dotnet new webapi -lang C# -o .
       - name: Update Repository
         run: |
           git config --global user.name 'Github Actions'
