@@ -1,0 +1,20 @@
+on:
+  created:
+  
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v3
+        name: Setup .Net 6
+        with:
+          dotnet-version: 6.0
+      - run: dotnet new -lang C# -n TestProject
+      - name: Update Repository
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'devops-team@users.noreply.github.com'
+          git commit -am "Automated project creation"
+          git push
+    
