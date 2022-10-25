@@ -1,5 +1,5 @@
 on:
-  created:
+  create:
   
 jobs:
   init:
